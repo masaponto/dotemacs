@@ -3,6 +3,7 @@
 (global-auto-complete-mode t)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20140414.2324/dict")
 (require 'auto-complete-config)
+
 (ac-config-default)
 (setq ac-auto-start nil)
 

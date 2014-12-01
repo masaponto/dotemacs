@@ -40,6 +40,12 @@
 
 (font-lock-add-keywords nil '(("\\<\\(FIXME:\\|TODO:\\)" 1 font-lock-warning-face t)))
 
+;;
+;;(setq split-width-threshold nil)
+;;(custom-set-variables
+;; '(split-width-threshold 77)
+;;)
+;;
 ;;自動カッコ閉じ
 ;;(electric-pair-mode 1)
 

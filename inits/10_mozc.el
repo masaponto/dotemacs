@@ -17,6 +17,10 @@
 
 ;; 全角半角キーで on/off
 (global-set-key [zenkaku-hankaku] 'toggle-input-method)
+(global-set-key (kbd "M-`") 'toggle-input-method)
+
+
+
 
 (defadvice mozc-handle-event (around intercept-keys (event))
   "Intercept keys muhenkan and zenkaku-hankaku, before passing keys
