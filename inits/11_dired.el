@@ -5,3 +5,5 @@
 (setq dired-recursive-copies 'always)
 ;; diredバッファでC-sした時にファイル名だけにマッチするように
 (setq dired-isearch-filenames t)
+
+(setq dired-hide-details-mode t)

@@ -1,29 +1,26 @@
 
 (autoload 'python-mode "python-mode" "Python Mode." t)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-;; jedi
+(setq-default py-split-windows-on-execute-function 'split-window-horizonaly)
 
-(require 'epc)
-(require 'auto-complete-config)
-(require 'python)
+(add-hook 'python-mode-hook 'company-mode)
 
-;;;;; PYTHONPATH上のソースコードがauto-completeの補完対象になる ;;;;;
-
-(if (string-match "G570" system-name)
-    (setenv "PYTHONPATH" "/usr/lib/python3.4/site-packages")
-  )
-
-(if (string-match "KIRA" system-name)
-    (setq python-shell-interpreter "python3")
-  )
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (define-key python-mode-map(kbd "\C-m") 'newline-and-indent)
+             (define-key python-mode-map(kbd "\C-c p") 'py-autopep8)
+             (define-key python-mode-map(kbd "RET") 'newline-and-indent)))
 
 
-(require 'jedi)
-(add-hook 'python-mode-hook 'jedi:setup)
+(require 'jedi-core)
 (setq jedi:complete-on-dot t)
+(setq jedi:use-shortcuts t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-to-list 'company-backends 'company-jedi) ; backendに追加
 
-;; C-tabでタブ移動と補完が競合するので回避
-(define-key jedi-mode-map (kbd "<C-tab>") 'tabbar-forward)
-(define-key jedi-mode-map (kbd "<C-return>") 'jedi:complete)
+
+;;PYTHONPATH上のソースコードがauto-completeの補完対象になる
+(setenv "PYTHONPATH" "/usr/lib/python3.5/site-packages")
+
+(add-hook 'python-mode-hook 'highlight-indentation-mode)

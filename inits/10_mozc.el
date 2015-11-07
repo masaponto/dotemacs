@@ -8,8 +8,9 @@
 (prefer-coding-system 'utf-8)
 
 ;;(setq mozc-candidate-style 'overlay)
-
-(setq mozc-candidate-style 'echo-area)
+(require 'mozc-popup)
+(setq mozc-candidate-style 'popup)
+;(setq mozc-candidate-style 'echo-area)
 
 (setq quail-japanese-use-double-n t)
 
@@ -18,8 +19,6 @@
 ;; 全角半角キーで on/off
 (global-set-key [zenkaku-hankaku] 'toggle-input-method)
 (global-set-key (kbd "M-`") 'toggle-input-method)
-
-
 
 
 (defadvice mozc-handle-event (around intercept-keys (event))

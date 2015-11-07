@@ -1,17 +1,11 @@
 ;; 画面いっぱい
-;; (custom-set-variables
-;;  '(initial-frame-alist (quote ((fullscreen . maximized)))))
-;; (setq default-frame-alist initial-frame-alist)
-
+(set-frame-parameter nil 'fullscreen 'maximized)
 ;; font
-(set-frame-font "ricty-13")
-(add-to-list 'default-frame-alist '(font . "ricty-13"))
+(set-frame-font "ricty-11")
+(add-to-list 'default-frame-alist '(font . "ricty-11"))
 
 ;; theme
 (load-theme 'deeper-blue t)
-
-;; setting of back ground
-;;(if window-system (progn (set-frame-parameter nil 'alpha 93)))
 
 ;; display clock
 (setq display-time-day-and-date t)
