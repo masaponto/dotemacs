@@ -5,7 +5,8 @@
 (add-to-list 'default-frame-alist '(font . "ricty-11"))
 
 ;; theme
-(load-theme 'deeper-blue t)
+;;(load-theme 'deeper-blue t)
+(load-theme 'dracula t)
 
 ;; display clock
 (setq display-time-day-and-date t)

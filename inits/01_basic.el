@@ -86,3 +86,13 @@
 (setq-default ispell-program-name "aspell")
 (eval-after-load "ispell"
  '(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
+
+
+(setq abbrev-file-name "~/.abbrev_defs")
+(setq save-abbrevs t)
+(quietly-read-abbrev-file)
+;; 以下は単なる好み。
+;;(global-set-key "\C-x'" 'just-one-space)
+;;(global-set-key "\M- " 'dabbrev-expand)
+;;(global-set-key "\M-/" 'expand-abbrev)
+;;(eval-after-load "abbrev" '(global-set-key "\M-/" 'expand-abbrev))

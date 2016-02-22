@@ -2,7 +2,7 @@
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-(setq-default py-split-windows-on-execute-function 'split-window-horizonaly)
+;;(setq-default py-split-windows-on-execute-function 'split-window-horizonaly)
 
 (add-hook 'python-mode-hook 'company-mode)
 
@@ -20,7 +20,8 @@
 (add-to-list 'company-backends 'company-jedi) ; backendに追加
 
 
+
 ;;PYTHONPATH上のソースコードがauto-completeの補完対象になる
-(setenv "PYTHONPATH" "/usr/lib/python3.5/site-packages")
+;;(setenv "PYTHONPATH" "/usr/lib/python3.5/site-packages")
 
 (add-hook 'python-mode-hook 'highlight-indentation-mode)

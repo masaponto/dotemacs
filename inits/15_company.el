@@ -1,6 +1,7 @@
 ;; reference
 ;; http://qiita.com/sune2/items/b73037f9e85962f5afb7
 
+(setq completion-show-help nil)
 (require 'company)
 ;;(global-company-mode) ; 全バッファで有効にする
 (setq company-idle-delay 0) ; デフォルトは0.5
@@ -39,5 +40,4 @@
 
 (require 'company-statistics)
 (company-statistics-mode)
-
 (setq company-transformers '(company-sort-by-statistics company-sort-by-backend-importance))
