@@ -1,3 +1,2 @@
-(require 'd-mode)
-(require 'company-dcd)
-(add-hook 'd-mode-hook 'company-dcd-mode)
+;;(require 'd-mode)
+(autoload 'd-mode "d-mode" t)

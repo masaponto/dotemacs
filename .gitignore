@@ -1,3 +1,7 @@
 elpa/
-*~
-.python-environments/
+company-statistics-cache.el
+recentf
+tramp
+auto-save-list/
+inits/mozc-popup.el
+inits/kotlin-mode.el

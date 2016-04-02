@@ -1,11 +1,11 @@
 ;; 画面いっぱい
 (set-frame-parameter nil 'fullscreen 'maximized)
+
 ;; font
 (set-frame-font "ricty-11")
 (add-to-list 'default-frame-alist '(font . "ricty-11"))
 
 ;; theme
-;;(load-theme 'deeper-blue t)
 (load-theme 'dracula t)
 
 ;; display clock

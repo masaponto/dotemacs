@@ -1,27 +1,36 @@
-
 (autoload 'python-mode "python-mode" "Python Mode." t)
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-;;(setq-default py-split-windows-on-execute-function 'split-window-horizonaly)
+(autoload 'jedi-core "jedi-core" nil t)
+
+;;(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+;;(add-to-list 'interpreter-mode-alist '("jedi-core" . jedi-core))
+
+(eval-after-load 'jedi-core
+  '(progn
+     (setq jedi:complete-on-dot t)
+     (setq jedi:use-shortcuts t)
+     (setq jedi:environment-root "~/.jedienv")
+     (setq jedi:environment-virtualenv
+           (append python-environment-virtualenv
+                   '("--virtual-env" "~/.pyenv/versions/anaconda3-2.3.0"
+                     "--virtual-env" "~/.jedienv")))
+     (setq jedi:server-args
+           '("--virtual-env" "~/.pyenv/versions/anaconda3-2.3.0"
+             "--virtual-env" "~/.jedienv"))
+     ))
 
 (add-hook 'python-mode-hook 'company-mode)
+(add-to-list 'company-backends 'company-jedi)
 
+(add-hook 'python-mode-hook 'indent-guide-mode)
 (add-hook 'python-mode-hook
           '(lambda ()
              (define-key python-mode-map(kbd "\C-m") 'newline-and-indent)
+             (define-key python-mode-map(kbd "RET") 'newline-and-indent)
              (define-key python-mode-map(kbd "\C-c p") 'py-autopep8)
-             (define-key python-mode-map(kbd "RET") 'newline-and-indent)))
-
-
-(require 'jedi-core)
-(setq jedi:complete-on-dot t)
-(setq jedi:use-shortcuts t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-to-list 'company-backends 'company-jedi) ; backendに追加
-
-
-
-;;PYTHONPATH上のソースコードがauto-completeの補完対象になる
-;;(setenv "PYTHONPATH" "/usr/lib/python3.5/site-packages")
-
-(add-hook 'python-mode-hook 'highlight-indentation-mode)
+             (setq indent-guide-recursive t)
+             (setq indent-tabs-mode nil)
+             (setq indent-level 4)
+             (setq python-indent 4)
+             (setq tab-width 4)
+             ))

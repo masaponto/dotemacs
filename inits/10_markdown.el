@@ -4,7 +4,11 @@
 
 (setq markdown-command "/usr/bin/markdown")
 
-;;(remove-hook 'before-save-hook 'delete-trailing-whitespace)
-
-
-;;(add-hook 'markdown-mode-hook (remove-hook 'delete-trailing-whitespace nil))
+(defun cleanup-org-tables ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (search-forward "-+-" nil t) (replace-match "-|-"))))
+(add-hook 'markdown-mode-hook 'orgtbl-mode)
+(add-hook 'markdown-mode-hook
+          #'(lambda()
+              (add-hook 'after-save-hook 'cleanup-org-tables  nil 'make-it-local)))

@@ -1,1 +1,1 @@
-(require 'haml-mode)
+(autoload 'haml-mode "haml-mode" t)

@@ -31,9 +31,5 @@
 (define-key global-map (kbd "C-z C-t") 'elscreen-create)
 (define-key global-map (kbd "C-z C-w") 'elscreen-kill)
 
-;;(define-key global-map (kbd "C-tab") 'elscreen-next)
-;;(define-key global-map (kbd "M-t") 'elscreen-previous)
-;;(define-key global-map (kbd "C-S-iso-lefttab") 'elscreen-previous)
-
 (global-set-key [(control tab)] 'elscreen-next)
 (global-set-key [(C-S-iso-lefttab)] 'elscreen-previous)

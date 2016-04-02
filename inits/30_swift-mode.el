@@ -1,1 +1,1 @@
-(require 'swift-mode)
+(autoload 'swift-mode "swift-mode" t)

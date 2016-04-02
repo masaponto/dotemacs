@@ -1,5 +1,3 @@
-;; (setq default-directory "~/") (setq command-line-default-directory
-;; "~/")
 
 (prefer-coding-system 'utf-8-unix)
 
@@ -11,7 +9,10 @@
 ;; no start up screen
 (setq inhibit-startup-screen t)
 
+(setq recentf-max-saved-items 1000)
+
 (setq ring-bell-function 'ignore)
+
 ;;hilight
 (global-hl-line-mode t)
 (custom-set-faces
@@ -91,8 +92,3 @@
 (setq abbrev-file-name "~/.abbrev_defs")
 (setq save-abbrevs t)
 (quietly-read-abbrev-file)
-;; 以下は単なる好み。
-;;(global-set-key "\C-x'" 'just-one-space)
-;;(global-set-key "\M- " 'dabbrev-expand)
-;;(global-set-key "\M-/" 'expand-abbrev)
-;;(eval-after-load "abbrev" '(global-set-key "\M-/" 'expand-abbrev))

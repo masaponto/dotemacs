@@ -1,10 +1,7 @@
 ;;helm
 (require 'helm-config)
-(require 'helm-files)
 
-(setq recentf-max-saved-items 1000)
-
-(global-set-key (kbd "M-s") 'helm-occur)
+(global-set-key (kbd "C-s") 'helm-occur)
 (global-set-key (kbd "M-q") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
@@ -20,14 +17,9 @@
   "Emulate `kill-line' in helm minibuffer"
   (kill-new (buffer-substring (point) (field-end))))
 
-;;ac-helm
-;;(autoload 'ac-helm "" nil t)
-;;(require 'ac-helm)
-;;(global-set-key (kbd "C-r") 'ac-complete-with-helm)
-
 ;;helm-swoop
 (require 'helm-swoop)
-(global-set-key (kbd "C-s") 'helm-swoop)
+(global-set-key (kbd "M-s") 'helm-swoop)
 
 
 ;;helm-ag
@@ -48,19 +40,3 @@
 ;; デフォルトでC-x TABに割り当てられるので競合回避
 (global-set-key (kbd "C-f") 'helm-descbinds)
 (global-set-key (kbd "C-x TAB") 'indent-region)
-
-;; helm migemo
-;; (require 'helm-migemo)
-;; ;; この修正が必要
-;; (eval-after-load "helm-migemo"
-;;   '(defun helm-compile-source--candidates-in-buffer (source)
-;;      (helm-aif (assoc 'candidates-in-buffer source)
-;;          (append source
-;;                  `((candidates
-;;                     . ,(or (cdr it)
-;;                            (lambda ()
-;;                              ;; Do not use `source' because other plugins
-;;                              ;; (such as helm-migemo) may change it
-;;                              (helm-candidates-in-buffer (helm-get-current-source)))))
-;;                    (volatile) (match identity)))
-;;        source)))

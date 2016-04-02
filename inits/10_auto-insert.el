@@ -1,10 +1,7 @@
 (require 'autoinsert)
-(add-hook 'find-file-hooks 'auto-insert)
-;; (setq auto-insert-query nil)
 
-;; テキスト形式で与える方法
-;; (setq auto-insert-directory "~/.emacs.d/insert/") ;; 最後にスラッシュ必要
-;; (define-auto-insert "\\.rb$" "template.rb")
+(add-hook 'find-file-hooks 'auto-insert)
+
 (setq auto-insert-alist nil) ;; デフォルトのひな形を一度全部オフにする。
 (setq auto-insert-alist
       (append '(
