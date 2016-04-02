@@ -3,5 +3,7 @@ company-statistics-cache.el
 recentf
 tramp
 auto-save-list/
+kkrc
+url/
 inits/mozc-popup.el
 inits/kotlin-mode.el
