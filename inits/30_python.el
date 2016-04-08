@@ -10,10 +10,10 @@
      (setq jedi:complete-on-dot t)
      (setq jedi:use-shortcuts t)
      (setq jedi:environment-root "~/.jedienv")
-     (setq jedi:environment-virtualenv
-           (append python-environment-virtualenv
-                   '("--virtual-env" "~/.pyenv/versions/anaconda3-2.3.0"
-                     "--virtual-env" "~/.jedienv")))
+     ;; (setq jedi:environment-virtualenv
+     ;;       (append python-environment-virtualenv
+     ;;               '("--virtual-env" "~/.pyenv/versions/anaconda3-2.3.0"
+     ;;                 "--virtual-env" "~/.jedienv")))
      (setq jedi:server-args
            '("--virtual-env" "~/.pyenv/versions/anaconda3-2.3.0"
              "--virtual-env" "~/.jedienv"))
