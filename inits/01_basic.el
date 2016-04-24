@@ -16,7 +16,8 @@
 ;;hilight
 (global-hl-line-mode t)
 (custom-set-faces
- '(hl-line ((t (:background "#424242"))))
+ ;; '(hl-line ((t (:background "#424242"))))
+ '(hl-line ((t (:background "#f4f4f4"))))
 )
 
 ;; yes -no to y - n

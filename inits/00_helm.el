@@ -1,5 +1,7 @@
 ;;helm
 (require 'helm-config)
+(helm-mode 1)
+;;(require 'helm-descbinds)
 
 (global-set-key (kbd "C-s") 'helm-occur)
 (global-set-key (kbd "M-q") 'helm-M-x)

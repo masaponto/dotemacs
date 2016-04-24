@@ -6,7 +6,8 @@
 (add-to-list 'default-frame-alist '(font . "ricty-11"))
 
 ;; theme
-(load-theme 'dracula t)
+;;(load-theme 'dracula t)
+(load-theme 'dakrone t)
 
 ;; display clock
 (setq display-time-day-and-date t)
