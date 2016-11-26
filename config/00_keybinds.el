@@ -1,13 +1,14 @@
+(require 'bind-key)
+
 ;; C-h をバックスペースに
 (keyboard-translate ?\C-h ?\C-?)
-(define-key global-map (kbd "C-x ?") 'help-command)
 
-(define-key global-map (kbd "C-u") 'forward-char)
-
+(bind-key "C-x ?" 'help-command)
+(bind-key "C-u" 'forward-char)
 
 ;; 行移動をM-j割り当て
-(global-set-key "\M-j" 'goto-line)
-
+(bind-key "\M-j" 'goto-line)
+(bind-key "C-x C-v" 'view-mode)
 
 (defun other-window-or-split ()
   (interactive)
@@ -15,13 +16,12 @@
     (split-window-horizontally))
   (other-window 1))
 
-(global-set-key (kbd "C-t") 'other-window-or-split)
+(bind-key "C-t" 'other-window-or-split)
 
-(global-set-key "\C-c\C-c" 'comment-region)
+(setq comment-style 'multi-line)
+(bind-key "\C-c\C-c" 'comment-or-uncomment-region)
 
-(global-set-key (kbd "M-SPC") 'cycle-spacing)
-
-(add-hook 'eval-expression-minibuffer-setup-hook 'eldoc-mode)
+(bind-key "M-SPC" 'cycle-spacing)
 
 ;; disable mouse
 (global-unset-key [mouse-1])

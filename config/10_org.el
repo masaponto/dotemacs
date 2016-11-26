@@ -4,6 +4,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 
+(require 'org-table)
 (add-hook 'org-mode-hook 'flyspell-mode)
 (eval-after-load 'org
   '(progn

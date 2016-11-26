@@ -1,7 +1,6 @@
 ;;; プレフィクスキーはC-z
 (setq elscreen-prefix-key (kbd "C-z"))
 (elscreen-start)
-;(elscreen-separate-buffer-list-mode 1)
 ;;; タブの先頭に[X]を表示しない
 (setq elscreen-tab-display-kill-screen nil)
 ;;; header-lineの先頭に[<->]を表示しない
@@ -28,8 +27,8 @@
         ("dict" . "OnlineDict")
         ("*WL:Message*" . "Wanderlust")))
 
-(define-key global-map (kbd "C-z C-t") 'elscreen-create)
-(define-key global-map (kbd "C-z C-w") 'elscreen-kill)
+(bind-key "C-z C-t" 'elscreen-create)
+(bind-key "C-z C-w" 'elscreen-kill)
 
-(global-set-key [(control tab)] 'elscreen-next)
-(global-set-key [(C-S-iso-lefttab)] 'elscreen-previous)
+(bind-key "<C-tab>" 'elscreen-next)
+(bind-key "<C-iso-lefttab>" 'elscreen-previous)

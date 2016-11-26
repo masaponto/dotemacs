@@ -12,5 +12,5 @@
  '(anzu-replace-to-string-separator " => "))
 
 
-(global-set-key (kbd "M-%") 'anzu-query-replace)
-(global-set-key (kbd "M-#") 'anzu-query-replace-at-cursor-thing)
+(bind-key "M-%" 'anzu-query-replace)
+(bind-key "M-#" 'anzu-query-replace-at-cursor-thing)

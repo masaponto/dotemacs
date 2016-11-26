@@ -31,7 +31,7 @@
 
 (add-hook 'yatex-mode-hook 'turn-on-reftex)
 (add-hook 'yatex-mode-hook 'flyspell-mode)
-(add-hook 'yatex-mode-hook 'indent-guide-mode)
+;; (add-hook 'yatex-mode-hook 'indent-guide-mode)
 
 (add-hook 'yatex-mode-hook 'company-mode)
 (add-to-list 'company-backends 'company-math-symbols-unicode)

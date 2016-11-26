@@ -2,11 +2,10 @@
 (set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; font
-(set-frame-font "ricty-11")
-(add-to-list 'default-frame-alist '(font . "ricty-11"))
+(set-frame-font "ricty-13")
+(add-to-list 'default-frame-alist '(font . "ricty-13"))
 
 ;; theme
-;;(load-theme 'dracula t)
 (load-theme 'dakrone t)
 
 ;; display clock

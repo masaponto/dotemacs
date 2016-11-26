@@ -16,7 +16,6 @@
                 (("\\.py$" . "python template")
                  nil
                  "#!/usr/bin/env python\n"
-                 "# -*- coding: utf-8 -*-"
                  "\n"
                  "\n"
                  "def main():\n"
