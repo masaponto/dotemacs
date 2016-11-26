@@ -18,6 +18,18 @@
 
 (bind-key "C-t" 'other-window-or-split)
 
+(defun revert-buffer-no-confirm (&optional force-reverting)
+  "Interactive call to revert-buffer. Ignoring the auto-save
+ file and not requesting for confirmation. When the current buffer
+ is modified, the command refuses to revert it, unless you specify
+ the optional argument: force-reverting to true."
+  (interactive "P")
+  ;;(message "force-reverting value is %s" force-reverting)
+  (if (or force-reverting (not (buffer-modified-p)))
+      (revert-buffer :ignore-auto :noconfirm)
+    (error "The buffer has been modified")))
+(bind-key "\C-r" 'revert-buffer-no-confirm)
+
 (setq comment-style 'multi-line)
 (bind-key "\C-c\C-c" 'comment-or-uncomment-region)
 
