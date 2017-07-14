@@ -35,6 +35,9 @@
 
 (bind-key "M-SPC" 'cycle-spacing)
 
+;;(bind-key "M-s" (lambda () (interactive) (align-regexp)))
+(global-set-key (kbd "C-c M-a") 'align-regexp)
+
 ;; disable mouse
 (global-unset-key [mouse-1])
 (global-unset-key [down-mouse-1])
@@ -54,3 +57,5 @@
 (global-unset-key [\S-down-mouse-3])
 (global-unset-key [\C-down-mouse-3])
 (global-unset-key [\M-mouse-3])
+
+(global-unset-key (kbd "S-SPC"))

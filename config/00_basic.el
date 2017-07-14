@@ -6,6 +6,8 @@
 ;; バックアップを残さない
 (setq make-backup-files nil)
 
+(setq-default indent-tabs-mode nil)
+
 ;; no start up screen
 (setq inhibit-startup-screen t)
 
