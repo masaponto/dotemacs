@@ -11,8 +11,6 @@
                 ("\\.bbl$" . yatex-mode)) auto-mode-alist))
 (setq YaTeX-kanji-code nil)
 
-
-
 (dolist (dir (list
               "$HOME/.local/bin"
               ))
@@ -23,10 +21,10 @@
    (setq exec-path (append (list dir) exec-path))))
 
 
-(setq tex-command "latexmk -pdf")
-(setq dvi2-command "evince")
-(setq bibtex-command "pbibtex")
-(setq dviprint-command-format "dvipdfmx -f ptex-ipaex.map")
+;(setq tex-command "latexmk -pdf")
+;(setq dvi2-command "evince")
+;(setq bibtex-command "pbibtex")
+;(setq dviprint-command-format "dvipdfmx -f ptex-ipaex.map")
 (add-hook 'yatex-mode-hook '(lambda () (auto-fill-mode -1))) ;; 自動で改行しない
 
 (add-hook 'yatex-mode-hook 'turn-on-reftex)

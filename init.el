@@ -13,9 +13,7 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init 'error-only)
 (init-loader-load "~/.emacs.d/config")
-
 (package-install 'helm)
-
 
 (require 'cl)
 
@@ -62,7 +60,7 @@
  '(anzu-search-threshold 1000)
  '(package-selected-packages
    (quote
-    (company-go go-mode kotlin-mode swift-mode geiser company-jedi python-mode markdown-mode minimap helm-descbinds helm-describe-modes anzu indent-guide helm-ag company-statistics migemo helm-swoop telephone-line elscreen dakrone-theme helm yatex yaml-mode web-mode redo+ pythonic py-autopep8 pkg-info pep8 mozc-popup mozc-im matlab-mode magit jedi-core init-loader company-math bind-key))))
+    (racket-mode tide typescript-mode rainbow-delimiters company-go go-mode kotlin-mode swift-mode company-jedi python-mode markdown-mode minimap helm-descbinds helm-describe-modes anzu indent-guide helm-ag company-statistics migemo helm-swoop telephone-line elscreen dakrone-theme helm yatex yaml-mode web-mode redo+ pythonic py-autopep8 pkg-info pep8 mozc-popup mozc-im matlab-mode jedi-core init-loader company-math bind-key))))
 
 
 (custom-set-faces

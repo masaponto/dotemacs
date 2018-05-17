@@ -35,8 +35,12 @@
 
 (bind-key "M-SPC" 'cycle-spacing)
 
+;;(require 'cua)
+(cua-mode t)
+(setq cua-enable-cua-keys nil) ; そのままだと C-x が切り取りになってしまったりするので無効化
+
 ;;(bind-key "M-s" (lambda () (interactive) (align-regexp)))
-(global-set-key (kbd "C-c M-a") 'align-regexp)
+(global-set-key (kbd "C-x M-s") 'align-regexp)
 
 ;; disable mouse
 (global-unset-key [mouse-1])

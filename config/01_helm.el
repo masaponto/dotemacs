@@ -38,3 +38,5 @@
 ;; デフォルトでC-x TABに割り当てられるので競合回避
 (bind-key "C-f" 'helm-descbinds)
 (bind-key "C-x TAB" 'indent-region)
+
+(setq helm-split-window-default-side 'below)
