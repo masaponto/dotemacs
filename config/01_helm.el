@@ -4,7 +4,21 @@
 (setq tramp-verbose 6)
 (require 'helm)
 (require 'helm-config)
+(require 'helm-occur)
 (helm-mode 1)
+
+(require 'migemo)
+(setq migemo-command "cmigemo")
+(setq migemo-options '("-q" "--emacs"))
+
+(setq migemo-user-dictionary nil)
+(setq migemo-regex-dictionary nil)
+(setq migemo-coding-system 'utf-8-unix)
+(load-library "migemo")
+(migemo-init)
+(setq migemo-dictionary "/usr/share/migemo/utf-8/migemo-dict")
+
+(helm-migemo-mode 1)
 
 (bind-key "C-s" 'helm-occur)
 (bind-key "M-q" 'helm-M-x)

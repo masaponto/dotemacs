@@ -1,9 +1,6 @@
+
 ;; 画面いっぱい
 (set-frame-parameter nil 'fullscreen 'maximized)
-
-;; old font
-;;(set-frame-font "ricty-13")
-;;(add-to-list 'default-frame-alist '(font . "ricty-13"))
 
 ;; font
 (set-face-attribute 'default nil :family "ricty" :height 130)
@@ -16,7 +13,6 @@
 
 (add-to-list 'face-font-rescale-alist
             '(".*Ricty.*" . 1.0))
-
 
 ;; theme
 (load-theme 'dakrone t)
@@ -31,6 +27,9 @@
 
 ;; タイトルバーにファイル名を表示する
 (setq frame-title-format (format "emacs@%s : %%f" (system-name)))
+
+;; line number
+(global-display-line-numbers-mode t)
 
 ;; ツールバーを非表示
 (tool-bar-mode -1)
