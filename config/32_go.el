@@ -1,15 +1,15 @@
 (autoload 'go-mode "go-mode" t)
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
 
-(require 'company-go)
+;;(require 'company-go)
 
-(add-hook 'go-mode-hook (lambda ()
-                          (set (make-local-variable 'company-backends) '(company-go))
-                          (company-mode)
-			  (setq tab-width 4)))
-
-(setq gofmt-command "goimports")
-(add-hook 'before-save-hook 'gofmt-before-save)
+;;(add-hook 'go-mode-hook (lambda ()
+;;                          (set (make-local-variable 'company-backends) '(company-go))
+;;                          (company-mode)
+;;			  (setq tab-width 4)))
+;;
+;;(setq gofmt-command "goimports")
+;;(add-hook 'before-save-hook 'gofmt-before-save)
 
 (custom-set-faces
  '(company-preview

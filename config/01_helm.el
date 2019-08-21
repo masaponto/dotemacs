@@ -7,18 +7,18 @@
 (require 'helm-occur)
 (helm-mode 1)
 
-(require 'migemo)
-(setq migemo-command "cmigemo")
-(setq migemo-options '("-q" "--emacs"))
+;;(require 'migemo)
+;;(setq migemo-command "cmigemo")
+;;(setq migemo-options '("-q" "--emacs"))
+;;
+;;(setq migemo-user-dictionary nil)
+;;(setq migemo-regex-dictionary nil)
+;;(setq migemo-coding-system 'utf-8-unix)
+;;(load-library "migemo")
+;;(migemo-init)
+;;(setq migemo-dictionary "/usr/share/migemo/utf-8/migemo-dict")
 
-(setq migemo-user-dictionary nil)
-(setq migemo-regex-dictionary nil)
-(setq migemo-coding-system 'utf-8-unix)
-(load-library "migemo")
-(migemo-init)
-(setq migemo-dictionary "/usr/share/migemo/utf-8/migemo-dict")
-
-(helm-migemo-mode 1)
+;;(helm-migemo-mode 1)
 
 (bind-key "C-s" 'helm-occur)
 (bind-key "M-q" 'helm-M-x)
@@ -36,8 +36,8 @@
   (kill-new (buffer-substring (point) (field-end))))
 
 ;;helm-swoop
-(require 'helm-swoop)
-(bind-key "M-s" 'helm-swoop)
+;;(require 'helm-swoop)
+;;(bind-key "M-s" 'helm-swoop)
 
 ;;helm-ag
 (require 'helm-ag)
@@ -47,10 +47,10 @@
 (bind-key "C-c t" 'helm-ag-this-file)
 
 ;; helm descbinds
-(autoload 'helm-descbinds "" nil t)
-(helm-descbinds-mode)
+;;(autoload 'helm-descbinds "" nil t)
+;;(helm-descbinds-mode)
 ;; デフォルトでC-x TABに割り当てられるので競合回避
-(bind-key "C-f" 'helm-descbinds)
+;;(bind-key "C-f" 'helm-descbinds)
 (bind-key "C-x TAB" 'indent-region)
 
 (setq helm-split-window-default-side 'below)

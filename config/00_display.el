@@ -3,17 +3,17 @@
 (set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; font
-(set-face-attribute 'default nil :family "ricty" :height 130)
-(set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0213.2004-1
-                  (font-spec :family "ricty"))
-(set-fontset-font (frame-parameter nil 'font)
-                  'katakana-jisx0201
-                  (font-spec :family "ricty"))
-
-(add-to-list 'face-font-rescale-alist
-            '(".*Ricty.*" . 1.0))
-
+;;(set-face-attribute 'default nil :family "ricty" :height 130)
+;;(set-fontset-font (frame-parameter nil 'font)
+;;                  'japanese-jisx0213.2004-1
+;;                  (font-spec :family "ricty"))
+;;(set-fontset-font (frame-parameter nil 'font)
+;;                  'katakana-jisx0201
+;;                  (font-spec :family "ricty"))
+;;
+;;(add-to-list 'face-font-rescale-alist
+;;            '(".*Ricty.*" . 1.0))
+;;
 ;; theme
 (load-theme 'dakrone t)
 

@@ -17,7 +17,7 @@
 (setq ring-bell-function 'ignore)
 
 ;;hilight
-(global-hl-line-mode t)
+;;(global-hl-line-mode t)
 
 ;; yes -no to y - n
 (defalias 'yes-or-no-p 'y-or-n-p)
