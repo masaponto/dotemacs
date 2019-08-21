@@ -7,6 +7,7 @@
 
 
 ;; docstring comment
+;; inpired by https://qiita.com/fujimisakari/items/6b541fbc9467eed5696c
 (defun python-docstring-comment()
   (interactive)
   (let* ((begin-point (point-at-bol))
