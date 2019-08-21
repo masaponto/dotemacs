@@ -12,19 +12,21 @@
   (let* ((begin-point (point-at-bol))
          (end-point (point-at-eol))
          (function-line (buffer-substring begin-point end-point))
-         (space (format "    %s" (replace-regexp-in-string "def.*" "" function-line))))
+         (space (format "    %s" (replace-regexp-in-string "def.*" "" function-line)))
+         (4space (format "    ")))
     (goto-char end-point)
     (insert "\n")
     (insert (format "%s\"\"\"\n" space))
+    (insert (format "\n%sArgs:\n" space))
+
     (when (string-match ".*(\\(.+\\)):" function-line)
       (dolist (arg (split-string (match-string 1 function-line) ","))
         (if (not (equal arg "self"))
-            (progn (insert (format "\n%s:param %s:\n" space (replace-regexp-in-string "^\\s-+\\|\\s-+$" "" arg)))
-                   (insert (format "%s:type %s:\n" space (replace-regexp-in-string "^\\s-+\\|\\s-+$" "" arg))))
+            (insert (format "%s%s%s ():\n" space 4space (replace-regexp-in-string "^\\s-+\\|\\s-+$" "" arg)))
           )))
 
-    (insert (format "%s:return:\n" space))
-    (insert (format "%s:rtype:\n" space))
+    (insert (format "\n%sReturns:\n" space))
+    (insert (format "%s%s\n" space 4space))
     (insert (format "%s\"\"\"" space))))
 
 
