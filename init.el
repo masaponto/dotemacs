@@ -37,7 +37,7 @@
  '(doom-themes-enable-italic t)
  '(package-selected-packages
    (quote
-    (company-quickhelp dumb-jump doom-themes company-jedi company auto-virtualenvwrapper web-mode quelpa-use-package markdown-mode init-loader indent-guide helm-ag haskell-mode elscreen anzu))))
+    (git-gutter company-quickhelp dumb-jump doom-themes company-jedi company auto-virtualenvwrapper web-mode quelpa-use-package markdown-mode init-loader indent-guide helm-ag haskell-mode elscreen anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
