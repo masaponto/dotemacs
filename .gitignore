@@ -9,3 +9,5 @@ inits/mozc-popup.el
 inits/kotlin-mode.el
 /eshell
 network-security.data
+ac-comphist.dat
+.python-environments
