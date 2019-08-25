@@ -3,7 +3,7 @@
 (set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; theme
-(load-theme 'dakrone t)
+;(load-theme 'dakrone t)
 
 ;; display clock
 (setq display-time-day-and-date t)
@@ -33,3 +33,15 @@
 
 ;; カーソルの位置が何行目かを表示する
 (line-number-mode t)
+
+;; theme
+(use-package doom-themes
+  :custom
+  (doom-themes-enable-italic t)
+  (doom-themes-enable-bold t)
+  :custom-face
+  (doom-modeline-bar ((t (:background "#6272a4"))))
+  :config
+  (load-theme 'doom-dracula t)
+  (doom-themes-neotree-config)
+  (doom-themes-org-config))
