@@ -1,9 +1,8 @@
 ;; helm
 
 (use-package helm-config
-  :config
-  (helm-mode 1)
   :init
+  (helm-mode 1)
   (bind-key "M-q" 'helm-M-x)
   (bind-key "M-x" 'helm-M-x)
   (bind-key "M-y" 'helm-show-kill-ring)

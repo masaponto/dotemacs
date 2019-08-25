@@ -2,7 +2,7 @@
 (use-package markdown-mode
   :defer t
   :mode "\\.md\\'"
-  :init
+  :config
   (defun cleanup-org-tables ()
     (save-excursion
       (goto-char (point-min))
