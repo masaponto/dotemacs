@@ -11,7 +11,7 @@
 
 
 (use-package python
-  :init
+  :config
   (defun python-docstring-comment()
     (interactive)
     (let* ((begin-point (point-at-bol))
@@ -47,7 +47,18 @@
                (setq indent-tabs-mode nil)
                (setq indent-level 4)
                (setq python-indent 4)
-               (setq tab-width 4)
+               (setq tab-width 4))))
 
-               ))
-  )
+
+(use-package virtualenvwrapper)
+(use-package auto-virtualenvwrapper
+  :init
+  (add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate))
+
+;;(use-package )
+
+;;(use-package jedi
+;;  :init
+;;  (add-hook 'python-mode-hook 'jedi:setup)
+;;  :config
+;;  (setq jedi:complete-on-dot t))
