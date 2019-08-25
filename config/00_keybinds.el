@@ -1,4 +1,3 @@
-(require 'bind-key)
 
 ;; C-h をバックスペースに
 (keyboard-translate ?\C-h ?\C-?)
@@ -18,11 +17,8 @@
 
 (bind-key "C-t" 'other-window-or-split)
 
+;; revert
 (defun revert-buffer-no-confirm (&optional force-reverting)
-  "Interactive call to revert-buffer. Ignoring the auto-save
- file and not requesting for confirmation. When the current buffer
- is modified, the command refuses to revert it, unless you specify
- the optional argument: force-reverting to true."
   (interactive "P")
   ;;(message "force-reverting value is %s" force-reverting)
   (if (or force-reverting (not (buffer-modified-p)))
@@ -30,17 +26,12 @@
     (error "The buffer has been modified")))
 (bind-key "\C-r" 'revert-buffer-no-confirm)
 
+
 (setq comment-style 'multi-line)
 (bind-key "\C-c\C-c" 'comment-or-uncomment-region)
 
 (bind-key "M-SPC" 'cycle-spacing)
-
-;;(require 'cua)
-(cua-mode t)
-(setq cua-enable-cua-keys nil) ; そのままだと C-x が切り取りになってしまったりするので無効化
-
-;;(bind-key "M-s" (lambda () (interactive) (align-regexp)))
-(global-set-key (kbd "C-x M-s") 'align-regexp)
+(bind-key "C-x TAB" 'indent-region)
 
 ;; disable mouse
 (global-unset-key [mouse-1])
@@ -61,5 +52,3 @@
 (global-unset-key [\S-down-mouse-3])
 (global-unset-key [\C-down-mouse-3])
 (global-unset-key [\M-mouse-3])
-
-(global-unset-key (kbd "S-SPC"))

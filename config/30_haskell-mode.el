@@ -1,12 +1,15 @@
-(autoload 'haskell-mode "haskell-mode" nil t)
-(autoload 'haskell-cabal "haskell-cabal" nil t)
 
-(add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
-(add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
-(add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
+(use-package haskell-mode
+  :defer t
+  :mode (("\\.hs$" . haskell-mode)
+         ("\\.lhs$" . literate-haskell-mode))
+  :init
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+  (add-hook 'haskell-mode-hook 'font-lock-mode)
+  (add-hook 'haskell-mode-hook 'imenu-add-menubar-index))
 
-;;; indent の有効.
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'font-lock-mode)
-(add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
+(use-package haskell-cabal
+  :defer t
+  :mode ("\\.cabal\\'" . haskell-cabal-mode)
+  )

@@ -33,7 +33,6 @@
 ;;; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
 
-
 ;;; .#* とかのバックアップファイルを作らない
 (setq auto-save-default nil)
 
@@ -42,20 +41,15 @@
 
 (setq visible-bell t)
 
-;; 保存時に行末の空白を削除
-;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
-; 行末のwhitespaceを削除
-(setq delete-trailing-whitespace-exclude-patterns (list "\\.md$" "\\.markdown$"))
-
+;; 行末のwhitespaceを削除
 (require 'cl)
+(setq delete-trailing-whitespace-exclude-patterns (list "\\.md$" "\\.markdown$"))
 (defun delete-trailing-whitespace-with-exclude-pattern ()
   (interactive)
   (cond ((equal nil (loop for pattern in delete-trailing-whitespace-exclude-patterns
                           thereis (string-match pattern buffer-file-name)))
          (delete-trailing-whitespace))))
-
 (add-hook 'before-save-hook 'delete-trailing-whitespace-with-exclude-pattern)
-
 
 ;; ファイル末尾の改行を削除
 ;; http://www.emacswiki.org/emacs/DeletingWhitespace
@@ -74,12 +68,10 @@
 (show-paren-mode t)
 
 (setq load-prefer-newer t)
-
 (font-lock-add-keywords nil '(("\\<\\(FIXME:\\|TODO:\\)" 1 font-lock-warning-face t)))
 
 (setq split-height-threshold nil)
 
-;; spell
-(setq-default ispell-program-name "aspell")
-(eval-after-load "ispell"
- '(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
+(cua-mode t)
+;;そのままだと C-x が切り取りになってしまったりするので無効化
+(setq cua-enable-cua-keys nil)
