@@ -18,7 +18,16 @@
 
 ; mac
 (when (eq system-type 'darwin)
-  (setq ns-command-modifier (quote meta)))
+  (setq ns-command-modifier (quote meta))
+  (setq initial-frame-alist
+        (append (list
+                 '(width . 170)
+                 '(height . 60)
+                 ;;         '(top . 0)
+                 ;;         '(left . 0)
+                 )
+                initial-frame-alist))
+  )
 
 ; bind-key
 (require 'bind-key)
@@ -36,8 +45,8 @@
  '(custom-safe-themes
    (quote
     ("34c99997eaa73d64b1aaa95caca9f0d64229871c200c5254526d0062f8074693" default)))
- '(doom-themes-enable-bold t)
- '(doom-themes-enable-italic t)
+ '(doom-themes-enable-bold t t)
+ '(doom-themes-enable-italic t t)
  '(package-selected-packages
    (quote
     (git-gutter company-quickhelp dumb-jump doom-themes company-jedi company auto-virtualenvwrapper web-mode quelpa-use-package markdown-mode init-loader indent-guide helm-ag haskell-mode elscreen anzu))))
