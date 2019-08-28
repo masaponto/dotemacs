@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : pdreadcsv
+#key : pdreadcsv
+#contributor : masaponto
+# --
+pd.read_csv($1, index_col=None)
